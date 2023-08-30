@@ -1,5 +1,5 @@
 import React from 'react';
-import s from '../Nav/Nav.module.css';
+import s from './Nav.module.css';
 console.log(s);
 // let s = {
 //     'nav': 'Nav_nav__PyPBf',
