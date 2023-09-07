@@ -2,11 +2,12 @@ import React from 'react';
 import s from './Dialogs.module.css';
 import DialogItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 const Dialogs = (props) => {
-    const dialogsElements = props.dialogs.map(d => <DialogItem name={d.name} id={d.id} />);
+    const dialogsElements = props.state.dialogs.map(d => <DialogItem name={d.name} id={d.id} />);
 
-    const messagesElements = props.messages.map(m => <Message message={m.message} />);
+    const messagesElements = props.state.messages.map(m => <Message message={m.message} />);
 
     return (
         <div className={s.dialogs}>
@@ -16,6 +17,7 @@ const Dialogs = (props) => {
             <div className={s.messages}>
                 {messagesElements}
             </div>
+
         </div>
     );
 };

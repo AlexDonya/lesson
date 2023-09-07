@@ -18,11 +18,11 @@ function App(props) {
         <Nav />
         <div className='app-wrapper-content'>
           <Routes>
-            <Route path='/profile' Component={Profile} />
-            <Route path='/dialogs' Component={() => <Dialogs dialogs={props.dialogs} messages={props.messages} />} />
-            <Route path='/news' Component={News} />
-            <Route path='/music' Component={Music} />
-            <Route path='/settings' Component={Settings} />
+            <Route path='/' element={<Profile state={props.state.profilePage} />} />
+            <Route path='/dialogs/*' element={<Dialogs state={props.state.dialogsPage} />} />
+            <Route path='/news' element={<News />} />
+            <Route path='/music' element={<Music />} />
+            <Route path='/settings' element={<Settings />} />
           </Routes>
         </div>
       </div>
