@@ -1,0 +1,9 @@
+.conversation {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+}
+
+.messages2 {
+    margin-top: 50px;
+}

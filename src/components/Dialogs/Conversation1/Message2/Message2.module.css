@@ -1,0 +1,17 @@
+.message {
+    display: flex;
+    margin-top: 20px;
+}
+
+.photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    border-radius: 40%;
+}
+
+.text {
+    padding: 10px;
+}

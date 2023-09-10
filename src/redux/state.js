@@ -17,14 +17,45 @@ const state = {
             { id: 5, name: "Viktor" },
             { id: 6, name: "Valera" }
         ],
-        messages: [
-            { id: 1, message: "Hi!" },
-            { id: 2, message: "How are you?" },
-            { id: 3, message: "Yo!" },
-            { id: 4, message: "Cool!" },
-            { id: 5, message: "Fine!" },
-            { id: 6, message: "Go play basketball!" }
-        ],
+        conversation1: {
+            messages1: [
+                { id: 1, message: "Hi!" },
+                { id: 2, message: "How are you?" },
+                { id: 3, message: "Yo!" },
+                // { id: 4, message: "Cool!" },
+                // { id: 5, message: "Fine!" },
+                // { id: 6, message: "Go play basketball!" }
+            ],
+            messages2: [
+                // { id: 1, message: "Hi!" },
+                // { id: 2, message: "How are you?" },
+                // { id: 3, message: "Yo!" },
+                { id: 4, message: "Cool!" },
+                { id: 5, message: "Fine!" },
+                { id: 6, message: "Go play basketball!" }
+            ],
+        },
+        conversation2: {
+            messages1: [
+                // { id: 1, message: "Hi!" },
+                // { id: 2, message: "How are you?" },
+                // { id: 3, message: "Yo!" },
+                { id: 4, message: "Cool!" },
+                { id: 5, message: "Fine!" },
+                { id: 6, message: "Go play basketball!" }
+            ],
+            messages2: [
+                { id: 1, message: "Hi!" },
+                { id: 2, message: "How are you?" },
+                { id: 3, message: "Yo!" },
+                // { id: 4, message: "Cool!" },
+                // { id: 5, message: "Fine!" },
+                // { id: 6, message: "Go play basketball!" }
+            ],
+        },
+    },
+    sidebar: {
+
     },
 }
 
