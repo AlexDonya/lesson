@@ -35,8 +35,11 @@ const Nav = (props) => {
                     isActive ? s.active : ""
                 }>Settings</NavLink>
             </div>
-            <div className={s.friends}>
-                {friends.slice(1, 4)}
+            <div className={s.friendsBlock}>
+                <h2 className={s.titleFriends}>Friends</h2>
+                <div className={s.friends}>
+                    {friends.slice(1, 4)}
+                </div>
             </div>
         </nav>
     );

@@ -13,7 +13,15 @@
     color: gold;
 }
 
-.friends {
+.friendsBlock {
     margin: 100px 0 0 0;
+}
+
+.titleFriends {
+    font-size: 40px;
+    margin: 0;
+}
+
+.friends {
     display: flex;
 }
