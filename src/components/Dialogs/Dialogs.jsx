@@ -6,7 +6,7 @@ import Conversation1 from './Conversation1/Conversation1';
 import Conversation2 from './Conversation2/Conversation2';
 
 const Dialogs = (props) => {
-    const dialogsElements = props.state.dialogs.map(d => <DialogItem name={d.name} id={d.id} />);
+    const dialogsElements = props.state.dialogs.map(d => <DialogItem key={d.id} name={d.name} id={d.id} />);
 
     return (
         <div className={s.dialogs}>
