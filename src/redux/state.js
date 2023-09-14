@@ -1,3 +1,5 @@
+import {rerenderEntireTree} from '../render.js';
+
 const state = {
     profilePage: {
         posts: [
@@ -67,9 +69,7 @@ const state = {
 }
 
 
-
 export const addPost = (postMessage) => {
-    // debugger;
     const newPost = {
         id: 6,
         message: postMessage,
@@ -77,6 +77,8 @@ export const addPost = (postMessage) => {
     }
 
     state.profilePage.posts.push(newPost);
+    rerenderEntireTree(state);
 }
 
 export default state;
+
