@@ -2,6 +2,7 @@ import React from 'react';
 import s from './Conversation1.module.css';
 import Message1 from './Message1/Message1';
 import Message2 from './Message2/Message2';
+import { addMessageActionCreator, updateNewMessageTextActionCreator } from '../../../redux/state';
 
 const Conversation1 = (props) => {
 
@@ -10,10 +11,17 @@ const Conversation1 = (props) => {
 
     const newMessage = React.createRef();
 
-    const sendMessage = () => {
-        const text = newMessage.current.value;
-        alert(text);
+    const addMessage = () => {
+        // const text = newMessage.current.value;
+        props.dispatch(addMessageActionCreator());
     }
+
+    const onMessageChange = () => {
+        const text = newMessage.current.value;
+        let action = updateNewMessageTextActionCreator(text);
+        props.dispatch(action);
+    }
+    debugger;
 
     return (
         <div className={s.conversation}>
@@ -23,9 +31,11 @@ const Conversation1 = (props) => {
             <div className={s.messages2}>
                 {messages2Elements}
             </div>
-            <textarea ref={newMessage}></textarea>
+            <textarea onChange={onMessageChange}
+                ref={newMessage}
+                value={props.newMessageText} ></textarea>
             <div>
-                <button onClick={sendMessage}>Send</button>
+                <button onClick={addMessage}>Send</button>
             </div>
         </div>
     );

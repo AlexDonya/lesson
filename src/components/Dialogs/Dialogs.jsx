@@ -15,7 +15,7 @@ const Dialogs = (props) => {
             </div>
             <div className={s.messages}>
                 <Routes>
-                    <Route path='1' element={<Conversation1 conversation1={props.state.conversation1} />} />
+                    <Route path='1' element={<Conversation1 conversation1={props.state.conversation1} dispatch={props.dispatch} />} />
                     <Route path='2' element={<Conversation2 conversation2={props.state.conversation2} />} />
                 </Routes>
             </div>

@@ -5,10 +5,12 @@ import { addPostActionCreator, updateNewPostTextActionCreator } from '../../../r
 
 
 const MyPosts = (props) => {
+    // отрисовка постов
     const postsElements = props.posts.map(p => <Post key={p.id}
         message={p.message}
         likes={p.likes} />)
 
+    // создаем новый пост
     const newPostElement = React.createRef();
 
     const addPost = () => {
@@ -17,7 +19,6 @@ const MyPosts = (props) => {
 
     const onPostChange = () => {
         const text = newPostElement.current.value;
-        // let action = { type: 'UPDATE-NEW-POST-TEXT', newText: text, };
         let action = updateNewPostTextActionCreator(text);
         props.dispatch(action);
     }
