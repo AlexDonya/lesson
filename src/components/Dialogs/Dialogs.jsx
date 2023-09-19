@@ -6,7 +6,7 @@ import Conversation1 from './Conversation1/Conversation1';
 import Conversation2 from './Conversation2/Conversation2';
 
 const Dialogs = (props) => {
-    const dialogsElements = props.state.dialogs.map(d => <DialogItem key={d.id} name={d.name} id={d.id} />);
+    const dialogsElements = props.dialogsPage.dialogs.map(d => <DialogItem key={d.id} name={d.name} id={d.id} />);
 
     return (
         <div className={s.dialogs}>
@@ -15,8 +15,8 @@ const Dialogs = (props) => {
             </div>
             <div className={s.messages}>
                 <Routes>
-                    <Route path='1' element={<Conversation1 conversation1={props.state.conversation1} dispatch={props.dispatch} />} />
-                    <Route path='2' element={<Conversation2 conversation2={props.state.conversation2} />} />
+                    <Route path='1' element={<Conversation1 conversation1={props.dialogsPage.conversation1} newMessageText={props.dialogsPage.newMessageText} dispatch={props.dispatch} />} />
+                    <Route path='2' element={<Conversation2 conversation2={props.dialogsPage.conversation2} />} />
                 </Routes>
             </div>
         </div>

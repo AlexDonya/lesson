@@ -2,7 +2,7 @@ import React from 'react';
 import s from './Conversation1.module.css';
 import Message1 from './Message1/Message1';
 import Message2 from './Message2/Message2';
-import { addMessageActionCreator, updateNewMessageTextActionCreator } from '../../../redux/state';
+import { addMessageActionCreator, updateNewMessageTextActionCreator } from '../../../redux/dialogs-reducer';
 
 const Conversation1 = (props) => {
 
@@ -12,7 +12,6 @@ const Conversation1 = (props) => {
     const newMessage = React.createRef();
 
     const addMessage = () => {
-        // const text = newMessage.current.value;
         props.dispatch(addMessageActionCreator());
     }
 
@@ -21,7 +20,6 @@ const Conversation1 = (props) => {
         let action = updateNewMessageTextActionCreator(text);
         props.dispatch(action);
     }
-    debugger;
 
     return (
         <div className={s.conversation}>
