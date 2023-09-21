@@ -1,12 +1,17 @@
 import React from 'react';
 import s from './Dialogs.module.css';
 import DialogItem from './DialogItem/DialogItem';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Conversation1 from './Conversation1/Conversation1';
-import Conversation2 from './Conversation2/Conversation2';
+import { Route, Routes } from 'react-router-dom';
+import Conversation from './Conversation/Conversation';
+import ConversationContainer from './Conversation/ConversationContainer';
 
 const Dialogs = (props) => {
-    const dialogsElements = props.dialogsPage.dialogs.map(d => <DialogItem key={d.id} name={d.name} id={d.id} />);
+
+    let dialogsPage = props.store.getState().dialogsPage;
+    const dialogsElements = dialogsPage.dialogs.map(d => <DialogItem key={d.id} name={d.name} id={d.id} />);
+
+    // console.log(props.store);
+    // console.log(dialogsPage);
 
     return (
         <div className={s.dialogs}>
@@ -15,8 +20,11 @@ const Dialogs = (props) => {
             </div>
             <div className={s.messages}>
                 <Routes>
-                    <Route path='1' element={<Conversation1 conversation1={props.dialogsPage.conversation1} newMessageText={props.dialogsPage.newMessageText} dispatch={props.dispatch} />} />
-                    <Route path='2' element={<Conversation2 conversation2={props.dialogsPage.conversation2} />} />
+                    <Route path='1' element={<ConversationContainer
+                        store={props.store}
+                        dispatch={props.store.dispatch}
+                        conversation={dialogsPage.conversation}
+                        newMessageText={dialogsPage.newMessageText} />} />
                 </Routes>
             </div>
         </div>

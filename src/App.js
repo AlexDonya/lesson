@@ -10,17 +10,16 @@ import Settings from './components/Settings/Settings';
 import { Route, Routes } from 'react-router-dom';
 
 function App(props) {
-  debugger;
+  // debugger;
+
   return (
     <div className='app-wrapper'>
       <Header />
       <Nav state={props.state.sidebar} />
       <div className='app-wrapper-content'>
         <Routes>
-        {/* profilePage={props.state.profilePage} dispatch={props.dispatch}  */}
           <Route path='/' element={<Profile store={props.store} />} />
-          <Route path='/dialogs/*' element={<Dialogs dialogsPage={props.state.dialogsPage}
-            dispatch={props.dispatch} />} />
+          <Route path='/dialogs/*' element={<Dialogs store={props.store} />} />
           <Route path='/news' element={<News />} />
           <Route path='/music' element={<Music />} />
           <Route path='/settings' element={<Settings />} />

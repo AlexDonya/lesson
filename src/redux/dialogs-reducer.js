@@ -10,43 +10,19 @@ let initialState = {
         { id: 5, name: "Viktor" },
         { id: 6, name: "Valera" }
     ],
-    newMessageText: 'New message...',
-    conversation1: {
-        messages1: [
+    conversation: {
+        messagesPersonLeft: [
             { id: 1, message: "Hi!" },
-            { id: 2, message: "How are you?" },
-            { id: 3, message: "Yo!" },
-            // { id: 4, message: "Cool!" },
-            // { id: 5, message: "Fine!" },
-            // { id: 6, message: "Go play basketball!" }
+            { id: 2, message: "Fine!" },
+            { id: 3, message: "Yo! Go!" },
         ],
-        messages2: [
-            // { id: 1, message: "Hi!" },
-            // { id: 2, message: "How are you?" },
-            // { id: 3, message: "Yo!" },
-            { id: 4, message: "Cool!" },
-            { id: 5, message: "Fine!" },
-            { id: 6, message: "Go play basketball!" }
+        messagesPersonRight: [
+            { id: 1, message: "Hello!" },
+            { id: 2, message: "How are you?" },
+            { id: 3, message: "Go play basketball!" },
         ],
     },
-    conversation2: {
-        messages1: [
-            // { id: 1, message: "Hi!" },
-            // { id: 2, message: "How are you?" },
-            // { id: 3, message: "Yo!" },
-            { id: 4, message: "Cool!" },
-            { id: 5, message: "Fine!" },
-            { id: 6, message: "Go play basketball!" }
-        ],
-        messages2: [
-            { id: 1, message: "Hi!" },
-            { id: 2, message: "How are you?" },
-            { id: 3, message: "Yo!" },
-            // { id: 4, message: "Cool!" },
-            // { id: 5, message: "Fine!" },
-            // { id: 6, message: "Go play basketball!" }
-        ],
-    },
+    newMessageText: '',
 }
 
 const dialogsReducer = (state = initialState, action) => {
@@ -57,7 +33,7 @@ const dialogsReducer = (state = initialState, action) => {
                 message: state.newMessageText
             }
 
-            state.conversation1.messages1.push(newMessage);
+            state.conversation.messagesPersonRight.push(newMessage);
             state.newMessageText = '';
             return state;
         case UPDATE_NEW_MESSAGE_TEXT:
