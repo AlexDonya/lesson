@@ -3,23 +3,21 @@ import { addMessageActionCreator, updateNewMessageTextActionCreator } from '../.
 import Conversation from './Conversation';
 
 const ConversationContainer = (props) => {
-
     let state = props.store.getState().dialogsPage;
 
     const addMessage = () => {
-        props.dispatch(addMessageActionCreator());
+        props.store.dispatch(addMessageActionCreator());
     }
 
     const onMessageChange = (text) => {
         let action = updateNewMessageTextActionCreator(text);
-        props.dispatch(action);
+        props.store.dispatch(action);
     }
 
     return <Conversation updateNewMessageText={onMessageChange}
         addMessage={addMessage}
-        dialogsPage={state}
-        conversation={props.conversation}
-        newMessageText={props.newMessageText} />;
+        conversation={state.conversation}
+        newMessageText={state.newMessageText} />
 };
 
 export default ConversationContainer;

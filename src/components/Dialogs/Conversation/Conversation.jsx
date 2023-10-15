@@ -5,9 +5,6 @@ import MessagesPersonRight from './MessagesPersonRight/MessagesPersonRight';
 
 const Conversation = (props) => {
 
-    let state = props.dialogsPage;
-    // console.log(state);
-
     const messagesPersonLeft = props.conversation.messagesPersonLeft.map(m =>
         <MessagesPersonLeft key={m.id} messagesPersonLeft={m.message} />);
     const messagesPersonRight = props.conversation.messagesPersonRight.map(m =>
@@ -31,7 +28,9 @@ const Conversation = (props) => {
                 {messagesPersonRight}
             </div>
             <textarea onChange={onNewMessageChange}
-                value={props.newMessageText} placeholder='New message...' ></textarea>
+                value={props.newMessageText}
+                placeholder='New message...'>
+            </textarea>
             <div>
                 <button onClick={onAddMessage}>Send</button>
             </div>
