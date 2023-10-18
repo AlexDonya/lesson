@@ -32,16 +32,20 @@ const dialogsReducer = (state = initialState, action) => {
                 id: 7,
                 message: state.newMessageText
             }
-            let stateCopy = { ...state };
-            stateCopy.conversation.messagesPersonRight = [...state.conversation.messagesPersonRight];
-            stateCopy.conversation.messagesPersonRight.push(newMessage);
-            stateCopy.newMessageText = '';
-            return stateCopy;
+            return {
+                ...state,
+                conversation: {
+                    messagesPersonLeft: [...state.conversation.messagesPersonLeft],
+                    messagesPersonRight: [...state.conversation.messagesPersonRight, newMessage]
+                },
+                newMessageText: '',
+            };
         }
         case UPDATE_NEW_MESSAGE_TEXT: {
-            let stateCopy = { ...state };
-            stateCopy.newMessageText = action.newText;
-            return stateCopy;
+            return {
+                ...state,
+                newMessageText: action.newText,
+            };
         }
         default:
             return state;
