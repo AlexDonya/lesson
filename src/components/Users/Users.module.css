@@ -1,0 +1,28 @@
+.container {
+    margin: 50px;
+}
+
+.user {
+    display: flex;
+    margin: 10px;
+}
+
+.ava {
+    height: 100px;
+    border-radius: 50px;
+}
+
+.info {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.infoIntoInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.infoIntoInfo span {
+    margin: 20px;
+}

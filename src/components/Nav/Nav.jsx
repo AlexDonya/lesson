@@ -37,6 +37,11 @@ const Nav = (props) => {
                     isActive ? s.active : ""
                 }>Settings</NavLink>
             </div>
+            <div className={s.item}>
+                <NavLink to='/users' className={({ isActive }) =>
+                    isActive ? s.active : ""
+                }>Find users</NavLink>
+            </div>
             <div className={s.friendsBlock}>
                 <h2 className={s.titleFriends}>Friends</h2>
                 <div className={s.friends}>
