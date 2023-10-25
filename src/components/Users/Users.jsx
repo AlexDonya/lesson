@@ -1,6 +1,8 @@
 import React from "react";
 import s from "./Users.module.css";
 import userPhoto from "../../assets/images/user-photo.png";
+import Preloader from "../common/Preloader/Preloader";
+
 
 const Users = (props) => {
 
@@ -18,7 +20,7 @@ const Users = (props) => {
       })}
     </div>
     {
-      props.users.map((u) => {
+      props.isFetching ? <Preloader /> : props.users.map((u) => {
         return (
           <div key={u.id} className={s.user}>
             <div>
