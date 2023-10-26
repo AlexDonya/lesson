@@ -15,17 +15,17 @@ const Nav = (props) => {
             <div className={s.item}>
                 <NavLink to='/' className={({ isActive }) =>
                     isActive ? s.active : ""
+                }>News</NavLink>
+            </div>
+            <div className={s.item}>
+                <NavLink to='/profile' className={({ isActive }) =>
+                    isActive ? s.active : ""
                 }>Profile</NavLink>
             </div>
             <div className={`${s.item} ${s.active}`}>
                 <NavLink to='/dialogs' className={({ isActive }) =>
                     isActive ? s.active : ""
                 }>Messages</NavLink>
-            </div>
-            <div className={s.item}>
-                <NavLink to='/news' className={({ isActive }) =>
-                    isActive ? s.active : ""
-                }>News</NavLink>
             </div>
             <div className={s.item}>
                 <NavLink to='/music' className={({ isActive }) =>

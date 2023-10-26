@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Header from './components/Header/Header';
 import NavContainer from './components/Nav/NavContainer';
-import Profile from './components/Profile/Profile';
+import ProfileContainer from './components/Profile/ProfileContainer';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import News from './components/News/News';
 import Music from './components/Music/Music';
@@ -17,9 +17,9 @@ function App() {
       <NavContainer />
       <div className='app-wrapper-content'>
         <Routes>
-          <Route path='/' element={<Profile />} />
+          <Route path='/' element={<News />} />
+          <Route path='/profile/*' element={<ProfileContainer />} />
           <Route path='/dialogs/*' element={<DialogsContainer />} />
-          <Route path='/news' element={<News />} />
           <Route path='/music' element={<Music />} />
           <Route path='/settings' element={<Settings />} />
           <Route path='/users' element={<UsersContainer />} />
