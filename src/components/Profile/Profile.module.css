@@ -1,8 +1,5 @@
-/* .content {
-    grid-area: main;
-    background-color: cornflowerblue;
-} */
-
-.content img {
-    width: 100%;
+.profileInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
