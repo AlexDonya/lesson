@@ -4,11 +4,11 @@ import ProfileInfo from './ProfileInfo/ProfileInfo';
 import MyPostsContainer from './MyPosts/MyPostsContainer';
 
 const Profile = (props) => {
-
+    // console.log(props.profile);
     return (
         <main className={s.profileInfo}>
             <ProfileInfo profile={props.profile} />
-            <MyPostsContainer />
+            <MyPostsContainer profile={props.profile} />
         </main>
     );
 };
