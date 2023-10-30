@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Header from './components/Header/Header';
+import HeaderContainer from './components/Header/HeaderContainer';
 import NavContainer from './components/Nav/NavContainer';
 import ProfileContainer from './components/Profile/ProfileContainer';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
@@ -13,7 +13,7 @@ import UsersContainer from './components/Users/UsersContainer';
 function App() {
   return (
     < div className='app-wrapper' >
-      <Header />
+      <HeaderContainer />
       <NavContainer />
       <div className='app-wrapper-content'>
         <Routes>

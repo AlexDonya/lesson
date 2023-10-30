@@ -1,4 +1,4 @@
-import store from './redux/redux-store.js';
+import store from './redux/store.js';
 import React, { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';

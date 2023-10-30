@@ -6,10 +6,10 @@ const Post = (props) => {
     let profile = props.profile;
     return (
         <div className={s.item}>
-            {profile === null ? <img src='' alt='photoProfile' /> : <img src={props.profile.photos.large} />}
+            {profile === null ? <Preloader /> : <img src={props.profile.photos.large} />}
             {props.message}
             <div>
-                <span>{props.likes} likes</span>
+                <span><span className={s.heartSymbol}>❤️</span> {props.likes} likes</span>
             </div>
         </div>
     );
