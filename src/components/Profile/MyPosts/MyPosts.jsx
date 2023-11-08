@@ -3,14 +3,11 @@ import s from './MyPosts.module.css';
 import Post from './Post/Post';
 
 const MyPosts = (props) => {
-    // console.log(props);
-    // отрисовка постов
     const postsElements = props.posts.map(p => <Post key={p.id}
         message={p.message}
         likes={p.likes}
         profile={props.profile} />)
 
-    // создаем новый пост
     const newPostElement = React.createRef();
 
     const onAddPost = () => {
@@ -18,8 +15,7 @@ const MyPosts = (props) => {
     };
 
     const onPostChange = () => {
-        const text = newPostElement.current.value;
-        props.updateNewPostText(text);
+        props.updateNewPostText(newPostElement.current.value);
     }
 
     return (
@@ -33,7 +29,6 @@ const MyPosts = (props) => {
                 </div>
                 <div>
                     <button onClick={onAddPost}>Add post</button>
-                    <button>Remove</button>
                 </div>
             </div>
             <div className={s.posts}>

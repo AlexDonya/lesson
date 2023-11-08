@@ -8,22 +8,25 @@
 }
 
 .ava {
-    height: 100px;
-    border-radius: 50px;
+    height: 100%;
+    width: 100%;
+    max-height: 150px;
+    max-height: 150px;
+    border-radius: 100px;
+}
+
+.userInfoSecondPart {
+    display: flex;
+    justify-content: space-between;
+    flex: 1 1 auto;
 }
 
 .info {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-}
-
-.infoIntoInfo {
     display: flex;
     flex-direction: column;
 }
 
-.infoIntoInfo span {
+.info span {
     margin: 20px;
 }
 

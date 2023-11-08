@@ -1,25 +1,23 @@
+/* ProfileInfo.jsx component */
 .info {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.descriptionBlock {
+.description {
     padding: 10px;
 }
 
-.imageProfile {
-    width: 100%;
-    height: 100%;
-    max-width: 200px;
-    max-height: 200px;
-}
+.photoUserProfileContainer {}
 
-.photo {
+.photoUserProfile {
     cursor: pointer;
 }
 
-.bigPhotoWrapper {
+
+/* OpenUserProfilePhoto.jsx component */
+.userProfilePhotoContainer {
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.4);
@@ -34,12 +32,12 @@
     transition: 0.5s;
 }
 
-.bigPhotoWrapper.active {
+.userProfilePhotoContainer.active {
     opacity: 1;
     pointer-events: all;
 }
 
-.bigPhoto {
+.userProfilePhoto {
     width: 100%;
     height: 100%;
     max-width: 500px;
@@ -48,6 +46,6 @@
     transition: 0.5s all;
 }
 
-.bigPhoto.active {
+.userProfilePhoto.active {
     transform: scale(1);
 }

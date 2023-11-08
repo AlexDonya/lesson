@@ -12,15 +12,13 @@ import UsersContainer from './components/Users/UsersContainer';
 
 function App() {
   return (
-    < div className='app-wrapper' >
+    <div className='app-wrapper'>
       <HeaderContainer />
       <NavContainer />
       <div className='app-wrapper-content'>
         <Routes>
           <Route path='/' element={<News />} />
           <Route path='/profile/:userId?' element={<ProfileContainer />} />
-          {/* <Route path=':userId' element={<ProfileContainer />} /> */}
-          {/* </Route> */}
           <Route path='/dialogs/*' element={<DialogsContainer />} />
           <Route path='/music' element={<Music />} />
           <Route path='/settings' element={<Settings />} />
