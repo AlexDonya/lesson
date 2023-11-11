@@ -18,7 +18,7 @@ export const API = {
     return instance.post(`follow/${id}`)
       .then((resposne) => resposne.data)
   },
-  authMe() {
+  auth() {
     return instance.get(`auth/me`)
       .then((resposne) => resposne.data)
   },

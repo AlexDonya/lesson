@@ -3,7 +3,6 @@ import s from "./Users.module.css";
 import userPhoto from "../../assets/images/user-photo.png";
 import Preloader from "../common/Preloader/Preloader";
 import { NavLink } from "react-router-dom";
-import { API } from '../api/api';
 
 
 const Users = (props) => {
@@ -38,32 +37,14 @@ const Users = (props) => {
                 </NavLink>
                 <div>
                   {u.followed ? (
-                    <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {
-
-                      props.toggleFollowingProgress(true, u.id)
-                      API.unfollow(u.id)
-                        .then((data) => {
-                          if (data.resultCode === 0) {
-                            props.unfollow(u.id)
-                          }
-                          props.toggleFollowingProgress(false, u.id)
-                        });
-
-                    }}>Unfollow
+                    <button disabled={props.followingInProgress.some(id => id === u.id)}
+                      onClick={() => props.unfollow(u.id)}>
+                      Unfollow
                     </button>)
                     : (
-                      <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {
-
-                        props.toggleFollowingProgress(true, u.id)
-                        API.follow(u.id)
-                          .then((data) => {
-                            if (data.resultCode === 0) {
-                              props.follow(u.id)
-                            }
-                            props.toggleFollowingProgress(false, u.id)
-                          });
-
-                      }}>Follow
+                      <button disabled={props.followingInProgress.some(id => id === u.id)}
+                        onClick={() => props.follow(u.id)}>
+                        Follow
                       </button>
                     )}
                 </div>
