@@ -1,23 +1,14 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import s from './Dialogs.module.css';
 import DialogItem from './DialogItem/DialogItem';
-import { Route, Routes, useNavigate } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import ConversationContainer from './Conversation/ConversationContainer';
 
 const Dialogs = (props) => {
-  const navigate = useNavigate();
-
   const dialogsElements = props.dialogsPage.dialogs.map(d => <DialogItem
     key={d.id}
     name={d.name}
     id={d.id} />);
-
-  useEffect(() => {
-    if (!props.isAuth) {
-      return navigate('/login');
-    }
-  }, [navigate, props.isAuth]);
-
 
   return (
     <div className={s.dialogs}>

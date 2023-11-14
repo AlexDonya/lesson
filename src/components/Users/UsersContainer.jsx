@@ -5,6 +5,7 @@ import {
 }
   from '../../redux/users-reducer';
 import Users from './Users';
+import withAuthRedirect from '../hoc/withAuthRedirect';
 
 class UsersContainer extends React.Component {
   componentDidMount() {
@@ -17,7 +18,7 @@ class UsersContainer extends React.Component {
   }
 
   render() {
-    return <>
+    return (
       <Users totalUsersCount={this.props.totalUsersCount}
         pageSize={this.props.pageSize}
         currentPage={this.props.currentPage}
@@ -28,9 +29,8 @@ class UsersContainer extends React.Component {
         isFetching={this.props.isFetching}
         toggleFollowingProgress={this.props.toggleFollowingProgress}
         followingInProgress={this.props.followingInProgress}
-        isAuth={this.props.isAuth}
       />
-    </>
+    )
   }
 }
 
@@ -42,11 +42,10 @@ const mapStateToProps = (state) => {
     currentPage: state.usersPage.currentPage,
     isFetching: state.usersPage.isFetching,
     followingInProgress: state.usersPage.followingInProgress,
-    isAuth: state.auth.isAuth,
   };
 };
 
 export default connect(mapStateToProps, {
   setCurrentPage, toggleFollowingProgress,
   getUsers, unfollowUser, followUser
-})(UsersContainer);
+})(withAuthRedirect(UsersContainer));
