@@ -14,8 +14,10 @@ let reducers = combineReducers({
   auth: authReducer
 });
 
-let store = legacy_createStore(reducers, compose(applyMiddleware(thunk),
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()));
+let store = legacy_createStore(reducers, applyMiddleware(thunk));
+
+// compose(applyMiddleware(thunk),
+//   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
 
 window.store = store;

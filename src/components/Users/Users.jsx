@@ -1,16 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import s from "./Users.module.css";
 import userPhoto from "../../assets/images/user-photo.png";
 import Preloader from "../common/Preloader/Preloader";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 
 const Users = (props) => {
+  const navigate = useNavigate();
   // let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
   let pages = [];
   for (let i = 1; i <= 20; i++) {
     pages = [...pages, i];
   }
+
+  useEffect(() => {
+    if (!props.isAuth) {
+      return navigate('/login');
+    }
+  }, [navigate, props.isAuth]);
 
   return (
     <div className={s.container}>

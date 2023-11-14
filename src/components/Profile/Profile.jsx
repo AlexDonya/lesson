@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import s from './Profile.module.css';
 import ProfileInfo from './ProfileInfo/ProfileInfo';
 import MyPostsContainer from './MyPosts/MyPostsContainer';
+import { useNavigate } from 'react-router-dom';
 
 const Profile = (props) => {
+    const navigate = useNavigate();
+    useEffect(() => {
+        if (!props.isAuth) {
+            return navigate('/login');
+        }
+    }, [navigate, props.isAuth]);
+
     return (
         <main className={s.profile}>
             <div>
