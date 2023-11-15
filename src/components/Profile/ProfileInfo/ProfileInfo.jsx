@@ -3,6 +3,7 @@ import s from './ProfileInfo.module.css';
 import Preloader from '../../common/Preloader/Preloader';
 import OpenUserProfilePhoto from './OpenUserProfilePhoto';
 import profilePhoto from '../../../assets/images/user-photo.png';
+import ProfileStatus from './ProfileStatus';
 
 const ProfileInfo = (props) => {
     const [photoActive, setPhotoActive] = useState(false);
@@ -22,7 +23,8 @@ const ProfileInfo = (props) => {
                     <OpenUserProfilePhoto active={photoActive} setActive={setPhotoActive}
                         userProfilePhoto={props.profile.photos.large} />
                 </div>
-                <div className={s.description}>{props.profile.aboutMe}</div>
+                {/* <div className={s.description}>{props.profile.aboutMe}</div> */}
+                <ProfileStatus status={'Hello my friends!!!'} />
             </div>
         </div>
     );
