@@ -12,6 +12,8 @@ const ProfileInfo = (props) => {
         return <Preloader />;
     }
 
+    // console.log(props);
+
     return (
         <div className={s.infoContainer}>
             <div className={s.info}>
@@ -24,7 +26,7 @@ const ProfileInfo = (props) => {
                         userProfilePhoto={props.profile.photos.large} />
                 </div>
                 {/* <div className={s.description}>{props.profile.aboutMe}</div> */}
-                <ProfileStatus status={'Hello my friends!!!'} />
+                <ProfileStatus {...props} />
             </div>
         </div>
     );

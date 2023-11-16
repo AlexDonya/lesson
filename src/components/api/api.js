@@ -18,13 +18,25 @@ export const API = {
     return instance.post(`follow/${id}`)
       .then((resposne) => resposne.data)
   },
+}
+
+export const profileAPI = {
+  getUserProfile(id) {
+    return instance.get(`profile/${id}`)
+      .then((resposne) => resposne.data)
+  },
+  getStatus(id) {
+    return instance.get(`profile/status/${id}`)
+      .then((resposne) => resposne.data)
+  },
+  updateStatus(status) {
+    return instance.put(`profile/status`, { status: status })
+  }
+}
+
+export const authAPI = {
   auth() {
     return instance.get(`auth/me`)
       .then((resposne) => resposne.data)
   },
-  getUserProfile(id) {
-    return instance.get(`profile/${id}`)
-      .then((resposne) => resposne.data)
-  }
 }
-
