@@ -5,7 +5,7 @@ const instance = axios.create({
   baseURL: 'https://social-network.samuraijs.com/api/1.0/',
 })
 
-export const API = {
+export const usersAPI = {
   getUser(currentPage, pageSize) {
     return instance.get(`users?page=${currentPage}&count=${pageSize}`)
       .then((resposne) => resposne.data)
@@ -35,8 +35,16 @@ export const profileAPI = {
 }
 
 export const authAPI = {
-  auth() {
+  authMe() {
     return instance.get(`auth/me`)
       .then((resposne) => resposne.data)
   },
+  authLogIn(email, password, rememberMe) {
+    return instance.post(`auth/login`, { email, password, rememberMe })
+      .then((resposne) => resposne.data)
+  },
+  authLogOut() {
+    return instance.delete(`auth/login`)
+      .then((resposne) => resposne.data)
+  }
 }
